@@ -9,7 +9,7 @@ import { Adapt as AdaptOSPaths, type OSPaths } from "./osPaths.ts";
 // # ref: <https://ploum.net/207-modify-your-application-to-use-xdg-folders> @@ <https://archive.is/f43Gk>
 
 /** `XDG` (API) Determine XDG Base Directory paths (OS/platform portable). */
-interface XDG {
+export interface XDG {
   /** Returns the directory path for user-specific non-essential (ie, cached) data files. */
   cache(): string;
 
@@ -179,5 +179,4 @@ function Adapt(): { readonly XDG: XDG } {
   return { XDG: new XDG_() as XDG };
 }
 
-export type { XDG };
 export { Adapt };
