@@ -1,4 +1,8 @@
 {
+  "name": "@404wolf/xdg-portable",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts",
   "tasks": {
     "test": "deno test --allow-env",
     "dev": "deno run --allow-env --watch main.ts"
