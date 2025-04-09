@@ -9,7 +9,6 @@ import { Adapt as AdaptOSPaths, type OSPaths } from "./osPaths.ts";
 // # ref: <https://ploum.net/207-modify-your-application-to-use-xdg-folders> @@ <https://archive.is/f43Gk>
 
 /** `XDG` (API) Determine XDG Base Directory paths (OS/platform portable). */
-// eslint-disable-next-line functional/prefer-type-literal
 interface XDG {
   /** Returns the directory path for user-specific non-essential (ie, cached) data files. */
   cache(): string;
@@ -31,8 +30,6 @@ interface XDG {
 
   /** Returns a preference-ordered array of base directory paths to search for data files (includes `.data()` directory as first entry). */
   dataDirs(): readonly string[];
-
-  /* eslint-enable functional/no-method-signature */
 }
 
 function Adapt(): { readonly XDG: XDG } {
@@ -146,7 +143,6 @@ function Adapt(): { readonly XDG: XDG } {
     return { cache, config, data, runtime, state };
   };
 
-  // eslint-disable-next-line functional/no-class
   class XDG_ {
     constructor() {
       function XDG(): XDG {

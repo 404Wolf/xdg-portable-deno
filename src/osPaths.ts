@@ -8,8 +8,6 @@ interface OSPaths {
 
   /** Returns the path string of the system's default directory for temporary files. */
   temp(): string;
-
-  /* eslint-enable functional/no-method-signature */
 }
 
 // Define Deno adapter type
