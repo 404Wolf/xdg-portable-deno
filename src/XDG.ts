@@ -32,7 +32,7 @@ export interface XDG {
   dataDirs(): readonly string[];
 }
 
-function Adapt(): { readonly XDG: XDG } {
+function Adapt(): XDG {
   const isMacOS = /darwin$/i.test(Deno.build.target);
   const isWinOS = /win/i.test(Deno.build.target);
 
@@ -176,7 +176,8 @@ function Adapt(): { readonly XDG: XDG } {
       return XDG;
     }
   }
-  return { XDG: new XDG_() as XDG };
+
+  return new XDG_() as XDG;
 }
 
 export { Adapt };
